@@ -13,15 +13,31 @@ import nu.xom.*;
  * @author reyga
  */
 public class Data {
+    private final String TagData= "TagData";
+    private final String TagTags= "TagTags";
     
     private String objeto;
     private ArrayList<String> tags;
+    
     public Data(Element e){
+        objeto=e.getValue();
+        
+        Element eltoTags = e.getFirstChildElement(TagTags);
+        
+        if (eltoTags!=null) {
+            Elements Tags = eltoTags.getChildElements();
+            for (int i = 0; i < Tags.size(); i++) {
+                tags.add(Tags.get(i).getValue());
+            }
+        }
         
         
     }
 
-    boolean busca(String searching) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    private boolean busca(String searching) {
+        if (objeto.equals(searching)) {
+            System.out.println("");//voy aqui
+        }
     }
+    
 }
