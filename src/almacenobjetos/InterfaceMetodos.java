@@ -11,6 +11,6 @@ package almacenobjetos;
  */
 public interface InterfaceMetodos  {
     
-    String busca(String searching);
+    public String busca(String searching);
     
 }

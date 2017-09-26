@@ -12,7 +12,7 @@ import nu.xom.*;
  *
  * @author reyga
  */
-public class Data {
+public class Data implements InterfaceMetodos{
     private final String TagData= "TagData";
     private final String TagTags= "TagTags";
     
@@ -34,10 +34,11 @@ public class Data {
         
     }
 
-    private boolean busca(String searching) {
+    public String busca(String searching) {
         if (objeto.equals(searching)) {
             System.out.println("");//voy aqui
         }
+        return "";
     }
     
 }

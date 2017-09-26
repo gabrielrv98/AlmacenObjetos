@@ -12,7 +12,7 @@ import nu.xom.*;
  *
  * @author reyga
  */
-public class Folder {
+public class Folder implements InterfaceMetodos {
     private final String TagFolder="TagFolder";
     private final String TagData= "TagData";
     
@@ -46,11 +46,11 @@ public class Folder {
         
     }
     
-    public boolean  busca(String searching){
-        boolean found = false;
+    public String busca(String searching){
+        String found = false;
         if (folders.size()>0) {
             int i=0;
-            while (i<folders.size() && found == false ) {
+            while (i<folders.size() && folders.get(i).busca(searching).equals("") ) {//confirmar si funciona
                 found=folders.get(i).busca(searching);
             }
         }
