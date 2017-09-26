@@ -23,11 +23,7 @@ public class AlmacenObjetos {
     }
     
     public static void menu() {
-        try{
         Almacen Almacen = new Almacen();
-        }catch(ParsingException eexc){
-            System.err.println("Error al obtener el Almacen.");
-        }
         int op= opcion();
         switch (op) {
             case 1:
@@ -69,7 +65,7 @@ public class AlmacenObjetos {
         }
     }
 
-    static String escanerCad() {
+    public static String escanerCad() {
         Scanner s = new Scanner(System.in);
         return s.nextLine();
     }

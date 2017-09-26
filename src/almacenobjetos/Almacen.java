@@ -7,7 +7,7 @@ package almacenobjetos;
 
 
 import java.io.*;
-import java.util.ArrayList;
+//import java.util.ArrayList;
 import nu.xom.*;
 
 /**
@@ -18,7 +18,7 @@ public class Almacen {
     public final String TagFolder= "tagFolder";
     Folder folders;
     
-    public  Almacen() throws ParsingException  {
+    public  Almacen()  {
         try{
             Builder parser = new Builder();
             Document doc =  parser.build( new File("Almacen.xml"));
@@ -38,34 +38,32 @@ public class Almacen {
     public void buscar(){
         System.out.println("Introduce tu busqueda:");
         String palabra= AlmacenObjetos.escanerCad();
-        folder busqueda(palabra);
-        flder
+        busqueda(palabra);
+        
         if (editar()) {
-            doc.edit();
+            
         }
     }
     private  static boolean editar(){
         int op=-1;
-        while (op>2 || op<1) {
+        do{
             if (op>2 && op<1) {
                 System.out.println("Quieres editar su ubicacion? ");
                 System.out.println("1.- Si");
                 System.out.println("2.- No");
                 op=AlmacenObjetos.escanerNum();
             }
-        }
-        if(op == 1){
-            return true;
-        }else return false;
+        }while (op>2 || op<1);
+        
+        return op == 1;
         
     }
     
-    public void busqueda (String string){
+    private void busqueda (String string){
         boolean found= false;
         while (!found) {
             
         }
-        return null;
     } 
 
     private void toXML() {

@@ -18,21 +18,22 @@ public class Folder {
     
     
     private String folder;
-    Nodo folders;
+    private ArrayList<Folder>  folders;
     private ArrayList<Data> datas;
     
     public  Folder(Element e){
-        Nodo actual;
+        
         this.folder = e.getValue();
-        folders = new Nodo(null,null,null);
-        actual=folders;
         datas = new ArrayList<>();
         Element eltoFolder =e.getFirstChildElement(TagFolder);
+        
         if (eltoFolder != null) {
+            
             Elements eltoFolderss = eltoFolder.getChildElements();
             for (int i = 0; i < eltoFolderss.size(); i++) {
+                
                 folders.add(new Folder(eltoFolderss.get(i)));
-                actual.put(eltoFolderss.get(i))
+                
             }
         }
         Element eltoData = e.getFirstChildElement(TagData);
