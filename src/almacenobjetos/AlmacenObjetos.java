@@ -6,7 +6,7 @@
 package almacenobjetos;
 
 import java.util.Scanner;
-import nu.xom.ParsingException;
+import nu.xom.*;
 
 /**
  *
@@ -30,7 +30,11 @@ public class AlmacenObjetos {
                 Almacen.buscar();
                     break;
             case 2: 
-                throw new AssertionError();
+                Almacen.add();
+                    break;
+            case 3:
+                Almacen.delete();
+                    break;
         }
     }
     
@@ -41,7 +45,7 @@ public class AlmacenObjetos {
         
         int op=-1;
         while (op>=NUM_OPTIONS || op<1) {
-        System.out.println("Opciones= ");
+        System.out.println("Opciones: ");
         System.out.println("1.- Buscar"
                 + "\n2.- Añadir"
                 + "\n3.- Eliminar");

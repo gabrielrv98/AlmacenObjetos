@@ -24,14 +24,20 @@ public class Almacen {
             Document doc =  parser.build( new File("Almacen.xml"));
             Element bucket = doc.getRootElement();
             folders= new Folder(bucket);
-            
+        }catch(FileNotFoundException exc){
+            System.err.println("Error en Almacen() no se encuentra el archivo");
+            folders = new Folder();
         }catch(IOException exc){
             System.err.println("Error en Almacen() iosException");
         }catch(ParsingException exc){
             System.err.println("Error en Almacen() ParsingException");
         }
     }
-    public void inserta(Folder f){
+    
+    public void add(){
+        
+    }
+    public void delete(){
         
     }
     

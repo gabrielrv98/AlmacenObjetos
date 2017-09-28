@@ -46,8 +46,14 @@ public class Folder implements InterfaceMetodos {
         
     }
     
+    public Folder(){
+        folder="Mundo";
+        folders= new ArrayList<>();
+        datas= new ArrayList<>();
+    }
+    
     public String busca(String searching){
-        String found = false;
+        String found = "";
         if (folders.size()>0) {
             int i=0;
             while (i<folders.size() && folders.get(i).busca(searching).equals("") ) {//confirmar si funciona

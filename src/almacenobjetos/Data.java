@@ -30,8 +30,20 @@ public class Data implements InterfaceMetodos{
                 tags.add(Tags.get(i).getValue());
             }
         }
-        
-        
+    }
+    public Data(){
+        tags= new ArrayList<>();
+        objeto="";
+    }
+    
+    public void addTags(){
+        String st="";
+        System.out.println("Introduce los tags y cuando acabes introduce 0");
+        while (!st.equals("0")) {
+            st=AlmacenObjetos.escanerCad();
+            tags.add(st);
+        }
+        System.out.println("Tags añadidos");
     }
 
     public String busca(String searching) {
