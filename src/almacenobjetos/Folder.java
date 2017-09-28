@@ -59,28 +59,32 @@ public class Folder implements InterfaceMetodos {
     
     @Override
     public String busca(String searching){
+        StringBuilder found1 = new StringBuilder();
         String found = "";
-        if (folder==searching) {
+        if (folder.equals(searching)) {
             found=folder;
+            found1.append(folder);
         }else{
             if (datas.size()>0) {
                 int i = 0;
-                while (i<folders.size() && found!=searching ) {
+                while (i<folders.size() && !found.substring(0, searching.length()).equals(searching) ) {//confirmar esto
                     found = datas.get(i).busca(searching);
+                    
                 } 
             }
 
             if (folders.size()>0) {
                 int i=0;
-                while (i<folders.size() && found!=searching ) {//confirmar si funciona
+                while (i<folders.size() && !found.equals(searching) ) {//confirmar si funciona
                     found=folders.get(i).busca(searching);
                 }
             }
+            
         }
         
         
         
-        return "";
+        return found;
     }
     
     public void encontrado(){

@@ -48,9 +48,14 @@ public class Data implements InterfaceMetodos{
 
     public String busca(String searching) {
         if (objeto.equals(searching)) {
-            System.out.println("");//voy aqui
+            System.out.println("->  "+objeto);//voy aqui
         }
-        return "";
+        return objeto;
+    }
+
+    @Override
+    public void addData() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
 }
