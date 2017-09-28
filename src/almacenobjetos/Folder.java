@@ -52,22 +52,35 @@ public class Folder implements InterfaceMetodos {
         datas= new ArrayList<>();
     }
     
+    @Override
+    public void addData(){
+        
+    }
+    
+    @Override
     public String busca(String searching){
         String found = "";
-        if (folders.size()>0) {
-            int i=0;
-            while (i<folders.size() && folders.get(i).busca(searching).equals("") ) {//confirmar si funciona
-                found=folders.get(i).busca(searching);
+        if (folder==searching) {
+            found=folder;
+        }else{
+            if (datas.size()>0) {
+                int i = 0;
+                while (i<folders.size() && found!=searching ) {
+                    found = datas.get(i).busca(searching);
+                } 
+            }
+
+            if (folders.size()>0) {
+                int i=0;
+                while (i<folders.size() && found!=searching ) {//confirmar si funciona
+                    found=folders.get(i).busca(searching);
+                }
             }
         }
-        if (datas.size()>0) {
-            int i = 0;
-            while (i<folders.size() && found == false ) {
-                found = datas.get(i).busca(searching);
-            }
-            
-        }
-        return true;
+        
+        
+        
+        return "";
     }
     
     public void encontrado(){

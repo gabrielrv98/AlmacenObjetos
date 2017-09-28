@@ -35,7 +35,27 @@ public class Almacen {
     }
     
     public void add(){
-        
+        int op=0;
+        while (op>2 || op<=0) {
+            System.out.println("Que deseas añadir: ");
+            System.out.println("1.- Añadir dato/Objeto"
+                    + "\n2.- Añadir Tag");
+            op=AlmacenObjetos.escanerNum();
+        }
+        switch (op) {
+            case 1:
+                addData();
+                break;
+            case 2:
+                addTag();
+        }
+    }
+    
+    private void addData(){
+        System.out.println("Introduce de fuera para dentro los lugares donde esta guardado."
+                + "\nApareceran algunos lugares sugeridos, escribe el numero a su izq para seleccionar."
+                + "\nCuando hayas acabado escribe <fin> (sin singos), y luego el nombre del Objeto");
+        folders.addData();
     }
     public void delete(){
         
