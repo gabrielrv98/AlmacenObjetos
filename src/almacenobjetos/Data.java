@@ -46,11 +46,13 @@ public class Data implements InterfaceMetodos{
         System.out.println("Tags añadidos");
     }
 
+    @Override
     public String busca(String searching) {
+        StringBuilder toret = new StringBuilder();
         if (objeto.equals(searching)) {
-            System.out.println("->  "+objeto);//voy aqui
+            toret.append(" -> ").append(objeto).append(".|");
         }
-        return objeto;
+        return toret.toString();
     }
 
     @Override

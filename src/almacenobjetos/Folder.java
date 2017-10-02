@@ -57,34 +57,42 @@ public class Folder implements InterfaceMetodos {
         
     }
     
+    
+    //acabado.
     @Override
-    public String busca(String searching){
-        StringBuilder found1 = new StringBuilder();
-        String found = "";
+    public String busca(String searching){//acabaia siendo algo como dir1 -> dir2 -> busqueda.|f1f2f3f1d4
+        StringBuilder found = new StringBuilder();
         if (folder.equals(searching)) {
-            found=folder;
-            found1.append(folder);
+            found.append(" -> ").append(folder).append(" (carpeta).|");
+            
         }else{
+            
             if (datas.size()>0) {
                 int i = 0;
-                while (i<folders.size() && !found.substring(0, searching.length()).equals(searching) ) {//confirmar esto
-                    found = datas.get(i).busca(searching);
-                    
-                } 
-            }
-
-            if (folders.size()>0) {
-                int i=0;
-                while (i<folders.size() && !found.equals(searching) ) {//confirmar si funciona
-                    found=folders.get(i).busca(searching);
+                while (i<folders.size() && (found.toString().length()<=0 ) ) {//confirmar esto
+                    found.append( datas.get(i).busca(searching));  
+                }
+                if (found.toString().length()<=0 ) {
+                    found.append("d").append(i);
                 }
             }
             
+            if (folders.size()>0 && (found.toString().length()<=0) ) {
+                int i=0;
+                while (i<folders.size() && (found.toString().length()<=0) ) {//confirmar si funciona
+                    found.append(folders.get(i).busca(searching));
+                }
+                if (found.toString().length()<=0 ) {
+                    found.append("f").append(i);
+                }
+            }
+            if (found.toString().length()<=0 ) {
+                    found.insert(0,folder);
+                    found.insert(0, " -> ");
+                }
         }
         
-        
-        
-        return found;
+        return found.toString();
     }
     
     public void encontrado(){

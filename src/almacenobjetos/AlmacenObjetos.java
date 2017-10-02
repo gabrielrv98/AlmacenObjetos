@@ -23,6 +23,12 @@ public class AlmacenObjetos {
     }
     
     public static void menu() {
+        StringBuilder aux = new StringBuilder();
+        aux.append("HOLA");
+        aux.insert(0, "prueba");
+        System.out.println(aux.toString());
+        
+        ////////////////////////////////////
         Almacen Almacen = new Almacen();
         int op= opcion();
         switch (op) {

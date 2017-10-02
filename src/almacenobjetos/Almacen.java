@@ -51,6 +51,10 @@ public class Almacen {
         }
     }
     
+    private void addTag(){
+        
+    }
+    
     private void addData(){
         System.out.println("Introduce de fuera para dentro los lugares donde esta guardado."
                 + "\nApareceran algunos lugares sugeridos, escribe el numero a su izq para seleccionar."
