@@ -7,7 +7,6 @@ package almacenobjetos;
 
 
 import java.io.*;
-//import java.util.ArrayList;
 import nu.xom.*;
 
 /**
@@ -58,7 +57,7 @@ public class Almacen {
     private void addData(){
         System.out.println("Introduce de fuera para dentro los lugares donde esta guardado."
                 + "\nApareceran algunos lugares sugeridos, escribe el numero a su izq para seleccionar."
-                + "\nCuando hayas acabado escribe <fin> (sin singos), y luego el nombre del Objeto");
+                + "\nCuando hayas acabado escribe \"fin\" (sin comillas), y luego el nombre del Objeto/Dato");
         folders.addData();
     }
     public void delete(){

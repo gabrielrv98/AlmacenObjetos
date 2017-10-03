@@ -52,8 +52,15 @@ public class Folder implements InterfaceMetodos {
         datas= new ArrayList<>();
     }
     
+    public String getFolderName(){
+        return folder;
+    }
+    
     @Override
     public void addData(){
+        foldersToSttring();
+        String newFolder = AlmacenObjetos.escanerCad();
+        
         
     }
     
@@ -109,6 +116,12 @@ public class Folder implements InterfaceMetodos {
         StringBuilder toret = new StringBuilder();
         toret.append(" -> ").append(folder).append(".");
         return toret.toString();
+    }
+
+    private void foldersToSttring() {
+        for (int i = 0; i < folders.size(); i++) {
+            System.out.println(i+".- "+folders.get(i).getFolderName());
+        }
     }
     
 }
