@@ -57,7 +57,7 @@ public class Folder implements InterfaceMetodos  {
     }
     
     
-    public void addData(){
+    public void addData(){//acabado
         System.out.print(getFolderName()+" -> ");
         foldersToSttring();
         String newFolder = AlmacenObjetos.escanerCad().trim();
@@ -83,6 +83,7 @@ public class Folder implements InterfaceMetodos  {
         
     }
     
+    //acabado
     public int existFolder(String fol){
         int i=0;
         while (i<folders.size()) {
@@ -95,7 +96,7 @@ public class Folder implements InterfaceMetodos  {
     }
     
     
-    //acabado.
+    //PseudoAcabado.
     @Override
     public String busca(String searching){//acabaia siendo algo como dir1 -> dir2 -> busqueda.|f1f2f3f1d4
         StringBuilder found = new StringBuilder();
@@ -130,6 +131,15 @@ public class Folder implements InterfaceMetodos  {
         }
         
         return found.toString();
+    }
+    
+    
+    //
+    public String buscaTags (String searching){//solo me devuelve las palabras y luego busco esa palabra?
+        
+        
+        
+        return "";
     }
     
     public void encontrado(){

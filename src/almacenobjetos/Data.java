@@ -36,6 +36,7 @@ public class Data implements InterfaceMetodos{
         objeto=name;
     }
     
+    //acabado
     public void addTags(){
         String st="";
         System.out.println("Introduce los tags y cuando acabes introduce 0");
@@ -44,6 +45,15 @@ public class Data implements InterfaceMetodos{
             tags.add(st);
         }
         System.out.println("Tags añadidos");
+    }
+    
+    //acabado
+    public boolean buscaTags(String searching){
+        int i=0;
+        while (i<tags.size() && !searching.equals(tags.get(i))) {
+            i++;
+        }
+        return i < tags.size();
     }
 
     @Override
