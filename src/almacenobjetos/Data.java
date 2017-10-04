@@ -31,9 +31,9 @@ public class Data implements InterfaceMetodos{
             }
         }
     }
-    public Data(){
+    public Data(String name){
         tags= new ArrayList<>();
-        objeto="";
+        objeto=name;
     }
     
     public void addTags(){
@@ -53,11 +53,6 @@ public class Data implements InterfaceMetodos{
             toret.append(" -> ").append(objeto).append(".|");
         }
         return toret.toString();
-    }
-
-    @Override
-    public void addData() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
 }

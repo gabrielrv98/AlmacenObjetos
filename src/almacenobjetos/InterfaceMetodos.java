@@ -13,6 +13,4 @@ public interface InterfaceMetodos  {
     
     public String busca(String searching);
     
-    public void addData();
-    
 }

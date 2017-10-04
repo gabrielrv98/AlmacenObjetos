@@ -25,7 +25,7 @@ public class Almacen {
             folders= new Folder(bucket);
         }catch(FileNotFoundException exc){
             System.err.println("Error en Almacen() no se encuentra el archivo");
-            folders = new Folder();
+            folders = new Folder("Mundo");
         }catch(IOException exc){
             System.err.println("Error en Almacen() iosException");
         }catch(ParsingException exc){

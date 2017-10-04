@@ -12,7 +12,7 @@ import nu.xom.*;
  *
  * @author reyga
  */
-public class Folder implements InterfaceMetodos {
+public class Folder implements InterfaceMetodos  {
     private final String TagFolder="TagFolder";
     private final String TagData= "TagData";
     
@@ -46,8 +46,8 @@ public class Folder implements InterfaceMetodos {
         
     }
     
-    public Folder(){
-        folder="Mundo";
+    public Folder(String name){
+        this.folder= name;
         folders= new ArrayList<>();
         datas= new ArrayList<>();
     }
@@ -56,12 +56,42 @@ public class Folder implements InterfaceMetodos {
         return folder;
     }
     
-    @Override
+    
     public void addData(){
+        System.out.print(getFolderName()+" -> ");
         foldersToSttring();
-        String newFolder = AlmacenObjetos.escanerCad();
+        String newFolder = AlmacenObjetos.escanerCad().trim();
+        if (newFolder.equals("fin")) {
+            System.out.println("Introduce el nombre del Objeto/Dato:");
+            String newData = AlmacenObjetos.escanerCad().trim();
+            datas.add(new Data(newData));
+            datas.get(datas.size()-1).addTags();
+        }
+        try{
+            int num=Integer.parseInt(newFolder);
+            folders.get(num-1).addData();
+        }catch(NumberFormatException exc){
+            int exist=existFolder(newFolder);
+            if (exist != -1) {
+                folders.get(exist).addData();
+            }else{
+                System.out.println("Creando nuevo fichero:");
+                folders.add(new Folder(newFolder));
+            }
+            
+        }
         
-        
+    }
+    
+    public int existFolder(String fol){
+        int i=0;
+        while (i<folders.size()) {
+            if (folders.get(i).getFolderName().equals(fol)) {
+                return i;
+            }
+            i++;
+        }
+        return -1;
     }
     
     
@@ -120,7 +150,7 @@ public class Folder implements InterfaceMetodos {
 
     private void foldersToSttring() {
         for (int i = 0; i < folders.size(); i++) {
-            System.out.println(i+".- "+folders.get(i).getFolderName());
+            System.out.println((i+1)+".- "+folders.get(i).getFolderName());
         }
     }
     

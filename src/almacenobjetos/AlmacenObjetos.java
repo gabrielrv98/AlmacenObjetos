@@ -6,7 +6,7 @@
 package almacenobjetos;
 
 import java.util.Scanner;
-import nu.xom.*;
+//import nu.xom.*;
 
 /**
  *
