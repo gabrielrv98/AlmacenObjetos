@@ -68,11 +68,13 @@ public class Almacen {
         System.out.println("Introduce tu busqueda:");
         String palabra= AlmacenObjetos.escanerCad();
         busqueda(palabra);
-        
+        System.out.println("busqueda completada");
         if (editar()) {
             
         }
     }
+    
+    
     private  static boolean editar(){
         int op=-1;
         do{
